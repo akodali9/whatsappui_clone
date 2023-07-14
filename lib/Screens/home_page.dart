@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappui_clone/Screens/chats_page.dart';
+import 'package:whatsappui_clone/Screens/status_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
   static List screens = [
     ChatsPage(),
-    Center(
-      child: Text(
-        "This is stories",
-        style: TextStyle(fontSize: 30),
-      ),
-    ),
+    StatusPage(),
     Center(
       child: Text(
         "This is Community",
@@ -84,65 +80,45 @@ class _MainScreenState extends State<MainScreen> {
       //     ],
       //   ),
       // ),
-      bottomNavigationBar: NavigationBarTheme(
-        data: NavigationBarThemeData(
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-          indicatorColor: const Color.fromARGB(255, 174, 213, 175),
-          elevation: 1,
-          labelTextStyle: MaterialStateProperty.all(
-            const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: currentindex,
+        onDestinationSelected: (int i) => {setState(() => currentindex = i)},
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(
+              Icons.chat_bubble_outline,
             ),
+            selectedIcon: Icon(
+              Icons.chat_bubble,
+            ),
+            label: "Chats",
           ),
-        ),
-        child: NavigationBar(
-          selectedIndex: currentindex,
-          onDestinationSelected: (int i) => {setState(() => currentindex = i)},
-          destinations: const <Widget>[
-            NavigationDestination(
-              icon: Icon(
-                Icons.chat_bubble_outline,
-                color: Colors.black38,
-              ),
-              selectedIcon: Icon(
-                Icons.chat_bubble,
-                color: Colors.black,
-              ),
-              label: "Chats",
+          NavigationDestination(
+            icon: Icon(
+              Icons.web_stories_outlined,
             ),
-            NavigationDestination(
-              icon: Icon(
-                Icons.web_stories_outlined,
-                color: Colors.black38,
-              ),
-              selectedIcon: Icon(
-                Icons.web_stories_rounded,
-                color: Colors.black,
-              ),
-              label: "Status",
+            selectedIcon: Icon(
+              Icons.web_stories_rounded,
             ),
-            NavigationDestination(
-              icon: Icon(
-                Icons.people_alt_outlined,
-                color: Colors.black38,
-              ),
-              selectedIcon: Icon(
-                Icons.people_alt,
-                color: Colors.black,
-              ),
-              label: "Communities",
+            label: "Status",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.people_alt_outlined,
             ),
-            NavigationDestination(
-              icon: Icon(
-                Icons.phone_outlined,
-                color: Colors.black38,
-              ),
-              selectedIcon: Icon(Icons.phone),
-              label: "Calls",
+            selectedIcon: Icon(
+              Icons.people_alt,
             ),
-          ],
-        ),
+            label: "Communities",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.phone_outlined,
+            ),
+            selectedIcon: Icon(Icons.phone),
+            label: "Calls",
+          ),
+        ],
       ),
     );
   }
