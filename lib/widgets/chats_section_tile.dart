@@ -9,9 +9,11 @@ class ChatSectionTile extends StatelessWidget {
 
   imgFunc() {
     if (item.img_url != "") {
-      return Image.network(
-        item.img_url,
-        fit: BoxFit.cover,
+      return Container(
+        child: Image.network(
+          item.img_url,
+          fit: BoxFit.cover,
+        ),
       );
     } else {
       return SvgPicture.asset('assets/default_imgs/profile_photo.svg');
@@ -25,7 +27,7 @@ class ChatSectionTile extends StatelessWidget {
       return Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Color.fromARGB(255, 16, 72, 22),
+          color: const Color.fromARGB(255, 16, 72, 22),
         ),
         padding: const EdgeInsets.all(5),
         child: Text(
@@ -40,7 +42,6 @@ class ChatSectionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
-      splashColor: const Color.fromARGB(255, 195, 196, 195),
       contentPadding: const EdgeInsets.all(10.0),
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(50),
@@ -59,7 +60,7 @@ class ChatSectionTile extends StatelessWidget {
           ),
           Text(
             item.text_msg,
-            style: TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14),
           ),
         ],
       ),

@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappui_clone/Screens/calls_page.dart';
 import 'package:whatsappui_clone/Screens/chats_page.dart';
+import 'package:whatsappui_clone/Screens/community_page.dart';
 import 'package:whatsappui_clone/Screens/status_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
-  static List screens = [
+  static const List screens = [
     ChatsPage(),
     StatusPage(),
-    Center(
-      child: Text(
-        "This is Community",
-        style: TextStyle(fontSize: 30),
-      ),
-    ),
-    Center(
-      child: Text(
-        "This is Calls",
-        style: TextStyle(fontSize: 30),
-      ),
-    ),
+    CommunityPage(),
+    CallsPage()
   ];
 
   @override

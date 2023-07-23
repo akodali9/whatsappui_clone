@@ -4,8 +4,10 @@ class MyThemes {
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: const Color(0xff121b22),
     brightness: Brightness.dark,
-    colorScheme: ColorScheme.dark(),
-    appBarTheme: AppBarTheme(
+    colorScheme: const ColorScheme.dark(
+      secondary: Color.fromARGB(255, 13, 19, 24),
+    ),
+    appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xff1f2c34),
       titleTextStyle: TextStyle(color: Color(0xfff8f9faa)),
       actionsIconTheme: IconThemeData(
@@ -13,10 +15,10 @@ class MyThemes {
       ),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      indicatorColor: Color(0xff374248),
-      backgroundColor: Color(0xff1f2c34),
+      indicatorColor: const Color(0xff374248),
+      backgroundColor: const Color(0xff1f2c34),
       iconTheme: MaterialStateProperty.all(
-        IconThemeData(
+        const IconThemeData(
           color: Color(0xff8b9ca6),
         ),
       ),
@@ -31,13 +33,13 @@ class MyThemes {
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: const Color(0xffffffff),
-    colorScheme: ColorScheme.light(),
+    colorScheme: const ColorScheme.light(),
     brightness: Brightness.light,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xff008069),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       labelTextStyle: MaterialStateProperty.all(
         const TextStyle(
           fontSize: 14,

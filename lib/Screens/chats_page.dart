@@ -113,7 +113,7 @@ class _ChatsPageState extends State<ChatsPage> {
           "WhatsApp",
           style: TextStyle(fontSize: 22),
         ),
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           size: 28,
           color: Colors.white,
         ),
