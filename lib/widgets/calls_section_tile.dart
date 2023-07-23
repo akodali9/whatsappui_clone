@@ -15,7 +15,10 @@ class CallsSectionTile extends StatelessWidget {
           fit: BoxFit.cover,
         );
       } else {
-        return SvgPicture.asset('assets/default_imgs/profile_photo.svg');
+        return Container(
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.onBackground),
+            child: SvgPicture.asset('assets/default_imgs/profile_photo.svg'));
       }
     }
 

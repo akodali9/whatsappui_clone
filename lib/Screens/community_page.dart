@@ -73,8 +73,14 @@ class _CommunityPageState extends State<CommunityPage> {
               contentPadding: const EdgeInsets.all(10.0),
               leading: AspectRatio(
                 aspectRatio: 1 / 1,
-                child: SvgPicture.asset(
-                  'assets/default_imgs/profile_photo.svg',
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Theme.of(context).colorScheme.onBackground,
+                  ),
+                  child: SvgPicture.asset(
+                    'assets/default_imgs/profile_photo.svg',
+                  ),
                 ),
               ),
               title: const Text("New Community"),

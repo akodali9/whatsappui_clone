@@ -6,6 +6,15 @@ void main() {
   runApp(const MainApp());
 }
 
+class AppStateNotifier extends ChangeNotifier {
+  bool isDarkMode = false;
+
+  void updateTheme(bool isDarkMode) {
+    this.isDarkMode = isDarkMode;
+    notifyListeners();
+  }
+}
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 

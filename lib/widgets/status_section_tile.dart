@@ -7,14 +7,18 @@ class StatusSectionTile extends StatelessWidget {
 
   final Status item;
 
-  imgFunc() {
+  imgFunc(context) {
     if (item.img_url != "") {
       return Image.network(
         item.img_url,
         fit: BoxFit.cover,
       );
     } else {
-      return SvgPicture.asset('assets/default_imgs/profile_photo.svg');
+      return Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
+          child: SvgPicture.asset('assets/default_imgs/profile_photo.svg'));
     }
   }
 
@@ -22,7 +26,7 @@ class StatusSectionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
-      contentPadding: const EdgeInsets.all(10),
+      contentPadding: const EdgeInsets.all(10.0),
       leading: Container(
         foregroundDecoration: BoxDecoration(
             border: Border.all(
@@ -34,7 +38,7 @@ class StatusSectionTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           child: AspectRatio(
             aspectRatio: 1 / 1,
-            child: imgFunc(),
+            child: imgFunc(context),
           ),
         ),
       ),

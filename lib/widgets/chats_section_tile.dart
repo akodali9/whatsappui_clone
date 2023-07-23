@@ -7,27 +7,29 @@ class ChatSectionTile extends StatelessWidget {
 
   final Chat item;
 
-  imgFunc() {
+  imgFunc(context) {
     if (item.img_url != "") {
-      return Container(
-        child: Image.network(
-          item.img_url,
-          fit: BoxFit.cover,
-        ),
+      return Image.network(
+        item.img_url,
+        fit: BoxFit.cover,
       );
     } else {
-      return SvgPicture.asset('assets/default_imgs/profile_photo.svg');
+      return Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
+          child: SvgPicture.asset('assets/default_imgs/profile_photo.svg'));
     }
   }
 
-  nCount() {
+  nCount(context) {
     if (item.notification_count == 0) {
       return const Text("");
     } else {
       return Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: const Color.fromARGB(255, 16, 72, 22),
+          color: Theme.of(context).colorScheme.secondary,
         ),
         padding: const EdgeInsets.all(5),
         child: Text(
@@ -47,7 +49,7 @@ class ChatSectionTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         child: AspectRatio(
           aspectRatio: 1 / 1,
-          child: imgFunc(),
+          child: imgFunc(context),
         ),
       ),
       title: Column(
@@ -69,7 +71,7 @@ class ChatSectionTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(item.time_date),
-          nCount(),
+          nCount(context),
         ],
       ),
     );

@@ -4,8 +4,10 @@ class MyThemes {
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: const Color(0xff121b22),
     brightness: Brightness.dark,
+    dividerColor: const Color.fromARGB(255, 13, 19, 24),
     colorScheme: const ColorScheme.dark(
-      secondary: Color.fromARGB(255, 13, 19, 24),
+      onBackground: Colors.white,
+      secondary: Color.fromARGB(255, 98, 149, 101),
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xff1f2c34),
@@ -32,8 +34,12 @@ class MyThemes {
   );
 
   static final lightTheme = ThemeData(
+    dividerColor: const Color.fromARGB(255, 218, 219, 219),
     scaffoldBackgroundColor: const Color(0xffffffff),
-    colorScheme: const ColorScheme.light(),
+    colorScheme: const ColorScheme.light(
+      onBackground: Colors.white,
+      secondary: Color.fromARGB(255, 161, 217, 166),
+    ),
     brightness: Brightness.light,
     appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xff008069),

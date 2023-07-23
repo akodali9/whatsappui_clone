@@ -73,6 +73,9 @@ class _MainScreenState extends State<MainScreen> {
       //   ),
       // ),
       bottomNavigationBar: NavigationBar(
+        animationDuration: Duration(
+          milliseconds: 1,
+        ),
         selectedIndex: currentindex,
         onDestinationSelected: (int i) => {setState(() => currentindex = i)},
         destinations: const <Widget>[

@@ -73,13 +73,16 @@ class _StatusPageState extends State<StatusPage> {
             ListTile(
               onTap: () {},
               contentPadding: const EdgeInsets.all(10.0),
-              leading: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: AspectRatio(
-                    aspectRatio: 1 / 1,
+              leading: AspectRatio(
+                  aspectRatio: 1 / 1,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                     child: SvgPicture.asset(
-                        'assets/default_imgs/profile_photo.svg')),
-              ),
+                        'assets/default_imgs/profile_photo.svg'),
+                  )),
               title: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,7 +96,8 @@ class _StatusPageState extends State<StatusPage> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 15.0, left: 10.0, bottom: 15.0),
+              padding:
+                  const EdgeInsets.only(top: 15.0, left: 10.0, bottom: 15.0),
               child: const Text(
                 "Recent updates",
                 style: TextStyle(
@@ -119,6 +123,9 @@ class _StatusPageState extends State<StatusPage> {
                   ),
                 )
               ],
+            ),
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),

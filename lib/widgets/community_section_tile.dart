@@ -6,14 +6,17 @@ class CommunitySectionTile extends StatelessWidget {
   const CommunitySectionTile({super.key, required this.item});
 
   final Communities item;
-  imgFunc(imgUrl) {
+  imgFunc(imgUrl, context) {
     if (imgUrl != "") {
       return Image.network(
         imgUrl,
         fit: BoxFit.cover,
       );
     } else {
-      return SvgPicture.asset('assets/default_imgs/profile_photo.svg');
+      return Container(
+          decoration:
+              BoxDecoration(color: Theme.of(context).colorScheme.onBackground),
+          child: SvgPicture.asset('assets/default_imgs/profile_photo.svg'));
     }
   }
 
@@ -23,7 +26,9 @@ class CommunitySectionTile extends StatelessWidget {
       children: [
         SizedBox(
           height: 5,
-          child: Container(color: const Color.fromARGB(255, 13, 19, 24)),
+          child: Container(
+            color: Theme.of(context).dividerColor,
+          ),
         ),
         ListTile(
           onTap: () {},
@@ -31,16 +36,19 @@ class CommunitySectionTile extends StatelessWidget {
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: AspectRatio(
-                aspectRatio: 1 / 1, child: imgFunc(item.comm_img_url)),
+                aspectRatio: 1 / 1, child: imgFunc(item.comm_img_url, context)),
           ),
           title: Text(item.comm_name),
         ),
         ListTile(
           onTap: () {},
           contentPadding: const EdgeInsets.all(10.0),
-          leading: AspectRatio(
-            aspectRatio: 1 / 1,
-            child: imgFunc(item.announcement_img),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: AspectRatio(
+              aspectRatio: 1 / 1,
+              child: imgFunc(item.announcement_img, context),
+            ),
           ),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,9 +62,12 @@ class CommunitySectionTile extends StatelessWidget {
         ListTile(
           onTap: () {},
           contentPadding: const EdgeInsets.all(10.0),
-          leading: AspectRatio(
-            aspectRatio: 1 / 1,
-            child: imgFunc(item.group_img_url),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: AspectRatio(
+              aspectRatio: 1 / 1,
+              child: imgFunc(item.group_img_url, context),
+            ),
           ),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,10 +86,6 @@ class CommunitySectionTile extends StatelessWidget {
           title: const Text(
             "View all",
           ),
-        ),
-        SizedBox(
-          height: 5,
-          child: Container(color: const Color.fromARGB(255, 13, 19, 24)),
         ),
       ],
     );
