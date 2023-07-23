@@ -85,7 +85,25 @@ class _CommunityPageState extends State<CommunityPage> {
                     .map((item) => CommunitySectionTile(item: item))
                     .toList(),
               ),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Your Communities are end to end encrypted 🔒",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 49, 165, 113),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

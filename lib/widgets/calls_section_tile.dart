@@ -9,34 +9,38 @@ class CallsSectionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     imgfunc(String user_img) {
-      if (user_img != ''){
-        return Image.network(user_img, fit: BoxFit.cover,);
-      }
-      else{
+      if (user_img != "") {
+        return Image.network(
+          user_img,
+          fit: BoxFit.cover,
+        );
+      } else {
         return SvgPicture.asset('assets/default_imgs/profile_photo.svg');
       }
     }
-    
 
     return ListTile(
       onTap: () {},
       contentPadding: EdgeInsets.all(10.0),
       leading: AspectRatio(
-        aspectRatio: 1/1,
+        aspectRatio: 1 / 1,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(50),
           child: imgfunc(item.User_img),
         ),
       ),
       title: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(item.User_name),
-          Text(item.TIME_DATE),
-        ]
-      ),
-      trailing: IconButton(onPressed: (){}, icon: Icon(Icons.call)),
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(item.User_name),
+            Text(item.TIME_DATE),
+          ]),
+      trailing: IconButton(
+          onPressed: () {},
+          icon: (item.type_of_call == "audio"
+              ? Icon(Icons.call)
+              : Icon(Icons.video_call))),
     );
   }
 }

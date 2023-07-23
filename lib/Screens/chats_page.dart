@@ -140,11 +140,33 @@ class _ChatsPageState extends State<ChatsPage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-            children: chats
-                .map((item) => ChatSectionTile(
-                      item: item,
-                    ))
-                .toList()),
+          children: [
+            Column(
+                children: chats
+                    .map((item) => ChatSectionTile(
+                          item: item,
+                        ))
+                    .toList()),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Your Chats are end to end encrypted 🔒",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 49, 165, 113),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       ),
     );
   }
