@@ -7,7 +7,6 @@ This project is a Whatsapp frontend clone built using the Flutter framework. It 
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Introduction
 
@@ -45,8 +44,3 @@ flutter run
 ```
 
 The app will now start on your device, and you can explore its features.
-
-
-## License
-
-This project is licensed under the [MIT License]. You are free to use, modify, and distribute the code for personal and commercial purposes. However, please provide appropriate attribution and include the original license file.
