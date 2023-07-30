@@ -12,7 +12,6 @@ This project is a Whatsapp frontend clone built using the Flutter framework. It 
 ## Introduction
 
 Whatsapp is one of the most widely used messaging apps worldwide. Its simple and intuitive interface, along with its rich feature set, has made it a go-to choice for billions of users. This project demonstrates how to build a Whatsapp-like frontend using Flutter, a popular open-source UI software development toolkit created by Google.
-![WhatsappClone.png](..%2F..%2FReact%20JS%2Fmy-portfolio%2Fsrc%2Fassets%2Fimgs%2FWhatsappClone.png)
 ## Installation
 
 To run this project on your local machine, make sure you have Flutter installed. If you haven't installed Flutter yet, follow the official installation guide: [Flutter Install](https://flutter.dev/docs/get-started/install).
